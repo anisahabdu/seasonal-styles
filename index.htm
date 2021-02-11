@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Eddie Browser Outfitters</title>
+    <meta name="robots" content="noindex,nofollow" />
+	<!-- below is a google font, go to https://www.google.com/fonts to get yours! -->
+	<link href='http://fonts.googleapis.com/css?family=Damion' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/default.css" />
+    <style type="text/css">
+	
+		.masthead{
+			font-family: 'Damion', cursive; /* required for google font */
+			font-size:3em;
+		}
+	
+		#logo{
+			float:right;
+			display:inline-block;
+			padding:2px;
+			max-width:100px; /* actual size of image */
+			width:20%; /* approximate size taken on screen in maximum view */
+		}
+	
+		#wear {
+			float:left;
+			display:inline-block;
+			padding:20px;
+			max-width:300px; /* actual size of image */
+			width:33%; /* approximate size taken on screen in maximum view */
+		}
+		footer {
+			text-align:center;
+			clear:both; /* ride below all items */
+			}
+		nav{
+			text-align:center; /* centers the nav */
+		}
+		
+		nav ul {
+				list-style:none; /* removes the bullets */
+			}
+		nav ul li
+			{
+				display:inline-block; /* makes horizontal, but able to declare margins */
+				margin:0 2%; /* margin left-right, gets smaller as necessary */
+			}
+		nav a:hover{
+			text-decoration: none;
+		}	
+    </style>
+   
+    <!--[if ltIE9]>
+       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+     <![endif]-->
+</head>
+<body>
+	<header role="banner">
+	    <img src="images/four-seasons.gif" alt="Seasonal Logo Goes Here" class="flexible" id="logo" />
+		<h1 class="masthead">Eddie Browser</h1>
+		<nav>
+			<ul class="seasons">
+				<li><a href="Default">Default</a></li>
+				<li><a href="Spring">Spring</a></li>
+				<li><a href="Summer">Summer</a></li>
+				<li><a href="Fall">Fall</a></li>
+				<li><a href="Winter">Winter</a></li>
+			</ul>
+		</nav>
+	</header>
+    <main role="main"></br>
+		<form id="dateForm">
+		<label for="dateField">
+			See what our collection looks likes based on a date:<input type="text" name="dateField" id="dateField" />
+		</label>
+			<input type="submit" value="Submit" />
+		</form>
+		 <header><h2>Clothes for all four seasons. What are your year-round clothes?</h2></header>
+		 <p>
+			I've had enough of storage lately. I want to buy clothes that operate for the majority of the year. You do too. Our favorite clothes stick with us no matter the weather. That reminds me, does anybody want to buy my winter car? It's the car I drive during the winter only. Okay, sure ... I get it. That's a stretch, but logically our wardrobe should be more versatile. Especially when the weather is so up and down all the time.
+		 <img src="images/300x400.png" alt="Season Wear Goes Here" id="wear" />
+		 </p>
+		 <h3>Tees and jeans.</h3>
+		<p>Take the incomparable pair, for instance. This is applesauce and cinnamon, peanut butter and jelly, hot chocolate and a warm fire: the bread and butter that are tees and jeans.
+			You'll be catching sun in the spring and summer with a light jacket or living it up with just the tee itself. And over there, in the winter, it's a solid start to the day. One comfortable layer for you and then each successive zip up or winter coat seals the deal. You're already wearing tees year-round, but now you're going to pay closer attention to it.
+			As for jeans, these are your all-around pants. Casual, professional, hard-working, and smart. You solve problems in jeans. When you're fixing your water heater or laying salt on the driveway, you're likely to be in your jeans. Later on, in the summer you can roll those puppies up and walk barefoot around the yard or up along that shoreline.		</p>
+		<h3>Staying cool and looking sharp in the right sweaters.</h3>
+		<p>
+			Your Christmas sweater has a great time in the winter. There's no problem with festive clothing. What you should have, though, are a couple sweaters that you can wear from solstice to solstice.
+			Take your cashmere for a spin. It's great as your cozy winter layer and in the opposite season when you're sidled up near a window as that cool summer rain pours down, you're in for a treat. Supima cotton sweaters are also a phenomenal choice.
+		</p>
+		<h3>Tunics for two pics.</h3>
+		<p>Think of the times you've had together. That red flannel tunic helped you out in a pinch last winter when you didn't quite know what to wear to that holiday party. It didn't let you down and there it is again in all those 4th of July photos. There's some celebratory magic in that one.
+			Same goes for your flannel shirts too. What's a backyard bonfire in the summer without the warmth of your flannel shirt? Also, how would you get through the ice storm without buttoning your flannel shirt all the way up, mummifying your neck and face with a scarf, and adding the cherry on top weatherproof winter coat ... just to get the mail. Your flannel is not just a fair-weathered friend.</p>
+			
+		</main>
+    <footer>
+      <small>&copy; 2013, All Rights Reserved ~
+      <a href="http://validator.w3.org/check/referer" target="_blank">Valid HTML</a> ~
+      <a href="http://jigsaw.w3.org/css-validator/check?uri=referer" target="_blank">Valid CSS</a>
+      </small>
+    </footer>
+    <!-- END Footer -->
+	<script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	$("document").ready(function(){
+		$('.seasons a').click(function(e){//find all a tags inside class of seasons
+            e.preventDefault();//stop default submission
+			let season = $(this).attr("href");//contents of href attribute of this element
+			//alert(season);
+			season = season.toLowerCase(); //convert to lowercase to see more easily
+
+			switch(season)
+			{
+				case 'spring':
+					$("#logo").attr("src","images/spring.gif");
+					$("#wear").attr("src","images/spring-wear.jpg");
+					$("html").css("background-color","#2B7129");
+					$("main header h2").html("Bloom up your day with our spring collection!");
+				break;
+
+				case 'summer':
+					$("#logo").attr("src","images/summer.gif");
+					$("#wear").attr("src","images/summer-wear.jpg");
+					$("html").css("background-color","#EBA52B");
+					$("main header h2").html("Some days you just have to create your own sunshine with our apparel!");
+				break;
+
+				case 'fall':
+					$("#logo").attr("src","images/fall.gif");
+					$("#wear").attr("src","images/fall-wear.jpg");
+					$("html").css("background-color","#A81124");
+					$("main header h2").html("Get a jump on Fall Wear!");
+				break;
+
+				case 'winter':
+					$("#logo").attr("src","images/winter.gif");
+					$("#wear").attr("src","images/winter-wear.jpg");
+					$("html").css("background-color","#005393");
+					$("main header h2").html("Winter dressing is all about having CHIC outerwear!");
+				break;
+
+				default:
+					$("#logo").attr("src","images/four-seasons.gif");
+					$("#wear").attr("src","images/300x400.png");
+					$("html").css("background-color","#ccc");
+					$("main header h2").html("Welcome to Eddie Browser, where you can get apparel for all seasons!");
+			}
+
+
+
+
+		});
+	});
+
+	$("document").ready(function(){
+		$('#dateForm').submit(function(e){//handle form submission event
+            e.preventDefault();//stop default submission
+			var datetext = $('input[name=dateField]').val();//grab data from textbox
+			var formDate = new Date(datetext);//create a date from form input
+			var dec = new Date("2021, 12");
+			var winter = new Date("2021, 01");
+			var spring = new Date("2021, 03");
+			var summer = new Date("2021, 06");
+			var fall = new Date("2021, 09");
+
+
+			if(formDate > winter && formDate < spring){
+				alert(datetext + " should open the winter collection.");
+			}else if (formDate > spring && formDate < summer){
+				alert(datetext + " should open the spring collection.");
+			}else if (formDate > summer && formDate < fall){
+				alert(datetext + " should open the summer collection.");
+			}else if(formDate > fall && formDate < dec){
+				alert(datetext + " should open the fall collection.");
+			}else{
+				alert(datetext + " should open the winter collection.");
+
+			}
+		});
+	});
+
+
+    </script>
+	
+</body>
+</html>
